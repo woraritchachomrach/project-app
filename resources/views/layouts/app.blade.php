@@ -108,18 +108,18 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                  <!--  <li class="nav-item">
                         <a href="{{ route('user-profiles.create') }}" class="nav-link">
                             <i class="nav-icon fas fa-calendar"></i>
                             <p>เพิ่มผู้ใช้</p>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                   <!-- <li class="nav-item">
                         <a href="{{ route('user-profiles.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>รายการผู้ใช้</p>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="{{ route('car-requests.create') }}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
