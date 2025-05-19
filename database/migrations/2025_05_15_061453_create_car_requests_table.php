@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('destination');
             $table->text('reason')->nullable();
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
-            $table->timestamps();
+            $table->timestamps();   
         });
     }
 

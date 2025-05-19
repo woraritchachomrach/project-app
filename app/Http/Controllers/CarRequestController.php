@@ -56,6 +56,9 @@ class CarRequestController extends Controller
             'start_time' => 'required|date',
             'end_time' => 'required|date|after_or_equal:start_time',
             'destination' => 'required|string',
+            'seats' => 'required|string', 
+            'car_registration' => 'required|string', 
+            'driver' => 'required|string',
             'reason' => 'nullable|string',
         ]);
         $validated['user_id'] = Auth::id();
@@ -63,7 +66,7 @@ class CarRequestController extends Controller
         // สร้างคำขอใหม่และเก็บผลลัพธ์ในตัวแปร $carRequest
         $carRequest = CarRequest::create($validated);
 
-        $chief = User::where('role', 'chief' )->first();
+        $chief = User::where('role', 'chief')->first();
         $chief->notify(new CarRequestSubmitted($carRequest));
         $carRequest->user->notify(new CarRequestReviewed($carRequest));
 
