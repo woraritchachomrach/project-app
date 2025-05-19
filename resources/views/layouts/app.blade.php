@@ -120,19 +120,21 @@
                             <p>รายการผู้ใช้</p>
                         </a>
                     </li> -->
+                    @unless (Auth::user()->role === 'chief')
                     <li class="nav-item">
                         <a href="{{ route('car-requests.create') }}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>แบบขอรถ</p>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a href="{{ route('car-requests.list') }}" class="nav-link">
                             <i class=""></i>
                             <p>รายการขอรถ</p>
                         </a>
                     </li>
+                    @endunless
+                    
                     @if (Auth::user()->role === 'chief')
                         <li class="nav-item">
                             <a href="{{ route('chief.dashboard') }}" class="nav-link">

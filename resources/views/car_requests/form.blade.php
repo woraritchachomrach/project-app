@@ -7,16 +7,16 @@
                 <h3 class="mb-4 text-center text-primary">แบบฟอร์มขอรถราชการ</h3>
 
                 @if (session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
+                    <div class="alert alert-success">{{ session('success') }}</div> 
                 @endif
 
-                <form method="POST" action="{{ route('car-requests.store') }}">
+                <form method="POST" action="{{ route('car-requests.store') }}">  <!--ส่งข้อมูลแบบ POST ไปยัง route ที่ชื่อ car-requests.store ถ้าใช้postให้เก็บstoreถ้าgetให้เก็บindexหรือชื่อไฟล์ที่ตั้ง-->
                     @csrf
 
                     <div class="mb-4">
                         <label class="form-label d-block fw-bold">เลือกรถที่ต้องการใช้</label>
                         <div class="row">
-                            @foreach (['7500_Moto3.jpg', 'images1.jpg', 'images2.jpg', 'images4.jpg'] as $car)
+                            @foreach (['7500_Moto3.jpg', 'images1.jpg', 'images2.jpg', 'images4.jpg'] as $car)  <!--วนลูปแสดงรถ 4 คัน (ภาพไฟล์ .jpg) จาก array ที่กำหนดไว้ในลูป-->
                                 <div class="col-md-3 col-sm-6 mb-3 text-center">
                                     <label class="d-block">
                                         <input type="radio" name="car_image" value="{{ $car }}" required
@@ -114,7 +114,7 @@
             flatpickr(id, {
                 enableTime: true,
                 dateFormat: "Y-m-d H:i",
-                locale: "th",
+                locale: "th", 
                 altInput: true,
                 altFormat: "J M Y H:i",
                 onReady: function(selectedDates, dateStr, instance) {
